@@ -101,7 +101,7 @@ void PLAT_pollInput(void) {
 			
 			// TODO: tmp, hardcoded, missing some buttons
 			if (type==EV_KEY) {
-				pressed = value;
+				pressed = value; 
 				// LOG_info("key event: %i (%i)\n", code,pressed);
 					 if (code==RAW_UP) 	{ btn = BTN_UP; 		id = BTN_ID_UP; }
 	 			else if (code==RAW_DOWN)	{ btn = BTN_DOWN; 		id = BTN_ID_DOWN; }

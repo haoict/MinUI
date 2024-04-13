@@ -25,4 +25,7 @@ libretro-common
 workspace/hash.txt
 workspace/readmes
 
+workspace/all/busybox
+workspace/all/initramfs
+
 FAKESD

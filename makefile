@@ -4,7 +4,7 @@
 # it has to, otherwise we'd be running a docker in a docker and oof
 
 ifeq (,$(PLATFORMS))
-PLATFORMS = tg5040 rgb30 miyoomini trimuismart m17 rg35xx rg35xxplus gkdpixel
+PLATFORMS = rg35xxplus
 endif
 
 ###########################################################
@@ -107,11 +107,11 @@ special:
 	# ----------------------------------------------------
 	# setup miyoomini/trimui family .tmp_update in BOOT
 	mv ./build/BOOT/common ./build/BOOT/.tmp_update
-	mv ./build/BOOT/miyoo ./build/BASE/
-	mv ./build/BOOT/trimui ./build/BASE/
-	cp -R ./build/BOOT/.tmp_update ./build/BASE/miyoo/app/
-	cp -R ./build/BOOT/.tmp_update ./build/BASE/trimui/app/
-	cp -R ./build/BASE/miyoo ./build/BASE/miyoo354
+	# mv ./build/BOOT/miyoo ./build/BASE/
+	# mv ./build/BOOT/trimui ./build/BASE/
+	# cp -R ./build/BOOT/.tmp_update ./build/BASE/miyoo/app/
+	# cp -R ./build/BOOT/.tmp_update ./build/BASE/trimui/app/
+	# cp -R ./build/BASE/miyoo ./build/BASE/miyoo354
 
 tidy:
 	# ----------------------------------------------------
@@ -151,48 +151,7 @@ package: tidy
 
 # TODO: make this a template like the cores makefile?
 
-rg35xx:
-	# ----------------------------------------------------
-	make common PLATFORM=$@
-	# ----------------------------------------------------
-
 rg35xxplus:
 	# ----------------------------------------------------
 	make common PLATFORM=$@
 	# ----------------------------------------------------
-
-miyoomini:
-	# ----------------------------------------------------
-	make common PLATFORM=$@
-	# ----------------------------------------------------
-
-trimuismart:
-	# ----------------------------------------------------
-	make common PLATFORM=$@
-	# ----------------------------------------------------
-
-trimui:
-	# ----------------------------------------------------
-	make common PLATFORM=$@
-	# ----------------------------------------------------
-
-rgb30:
-	# ----------------------------------------------------
-	make common PLATFORM=$@
-	# ----------------------------------------------------
-
-tg5040:
-	# ----------------------------------------------------
-	make common PLATFORM=$@
-	# ----------------------------------------------------
-
-m17:
-	# ----------------------------------------------------
-	make common PLATFORM=$@
-	# ----------------------------------------------------
-
-gkdpixel:
-	# ----------------------------------------------------
-	make common PLATFORM=$@
-	# ----------------------------------------------------
-
